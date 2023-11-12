@@ -6,7 +6,7 @@
     <form class="col s12" action="{{ url_for('add_category') }}" method="POST">
         <div class="mb-3">
           <label for="category_name" class="form-label">New Category</label>
-          <input type="text" class="form-control" id="category_name" name="category_name">
+          <input type="text" class="form-control" id="category_name" name="category_name" required>
         </div>
         <button type="submit" class="btn btn-primary mb-3">Submit</button>
       </form>
