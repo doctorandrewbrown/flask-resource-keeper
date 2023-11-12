@@ -1,1 +1,1 @@
-# Flask todo app
+# Flask resource keeper app
