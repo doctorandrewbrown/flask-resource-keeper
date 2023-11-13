@@ -1,4 +1,5 @@
 from flask import render_template, request, redirect, url_for
+from datetime import date
 from resource_keeper import app, db
 from resource_keeper.models import Category, Resource
 
@@ -29,3 +30,25 @@ def add_category():
 def edit_categories():
     categories = list(Category.query.all())
     return render_template("edit_categories.html", categories=categories)
+
+@app.route("/add_resource", methods=["GET", "POST"])
+def add_resource():
+    # get all categories to allow selection in new task form
+    categories = list(Category.query.all())
+    if request.method == "POST":
+        # create new row in Resource table
+        resource = Resource()
+        # assign values from form to fields in new Resource row (see models.py)
+        resource.resource_name = request.form.get("resource_name")
+        resource_description = request.form.get("resource_description")
+        resource_accessed = True if request.form.get("resource_accessed") else False
+        #date_created = request.form.get("resource_date")
+        date_created = date.today()
+        print(date_created)
+        category_id =request.form.get("category_id")
+        # add new record to db
+        db.session.add(resource)
+        db.session.commit()
+        return redirect(url_for("home"))
+    # if GET. Return categories to template for dropdown
+    return render_template("add_resource.html", categories=categories)
