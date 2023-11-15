@@ -38,14 +38,11 @@ def add_resource():
     if request.method == "POST":
         # create new row in Resource table
         resource = Resource()
-        # assign values from form to fields in new Resource row (see models.py)
+        # assign values from input form to fields in new Resource row (see models.py)
         resource.resource_name = request.form.get("resource_name")
-        resource_description = request.form.get("resource_description")
-        resource_accessed = True if request.form.get("resource_accessed") else False
-        #date_created = request.form.get("resource_date")
-        date_created = date.today()
-        print(date_created)
-        category_id =request.form.get("category_id")
+        resource.resource_url = request.form.get("resource_url")
+        resource.resource_description = request.form.get("text")
+        resource.category_id ="5"
         # add new record to db
         db.session.add(resource)
         db.session.commit()
