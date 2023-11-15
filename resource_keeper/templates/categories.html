@@ -16,7 +16,7 @@
             <div class="card-body text-center">
               <h5 class="card-title">{{ category.category_name}}</h5>
               <a href="#" class="btn btn-info">View</a>
-              <a href="{{url_for('add_resource')}}" class="btn btn-info">Add</a>
+              <a href="{{url_for('add_resource', category_id=category.id)}}" class="btn btn-info">Add</a>
             </div>
           </div>
     </div>
