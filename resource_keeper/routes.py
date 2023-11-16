@@ -33,8 +33,10 @@ def edit_categories():
 
 @app.route("/add_resource/<category_id>", methods=["GET", "POST"])
 def add_resource(category_id):
-    # get all categories to allow selection in new task form
-    categories = list(Category.query.all())
+    # get row for category selected in view
+    category = Category.query.filter_by(id=category_id).first()
+    # get category name from row
+    category_name = category.category_name
     if request.method == "POST":
         # create new row in Resource table
         resource = Resource()
@@ -48,5 +50,4 @@ def add_resource(category_id):
         db.session.commit()
         return redirect(url_for("home"))
     # if GET. Return categories to template for dropdown
-    # category = request.args.get()
-    return render_template("add_resource.html", category_id=category_id)
+    return render_template("add_resource.html", category_id=category_id, category_name = category_name)
