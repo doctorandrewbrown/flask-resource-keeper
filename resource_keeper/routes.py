@@ -43,7 +43,7 @@ def add_resource(category_id):
         # assign values from input form to fields in new Resource row (see models.py)
         resource.resource_name = request.form.get("resource_name")
         resource.resource_url = request.form.get("resource_url")
-        resource.resource_description = request.form.get("text")
+        resource.resource_description = request.form.get("resource_description")
         resource.category_id = category_id
         # add new record to db
         db.session.add(resource)
@@ -51,3 +51,9 @@ def add_resource(category_id):
         return redirect(url_for("home"))
     # if GET. Return categories to template for dropdown
     return render_template("add_resource.html", category_id=category_id, category_name = category_name)
+
+@app.route("/view_resources/<category_id>", methods=["GET"])
+def view_resources(category_id):
+    # get rows for selected category
+    resources = Resource.query.filter_by(category_id=category_id).all()
+    return render_template("view_resources.html", resources=resources)
