@@ -33,8 +33,9 @@ def edit_categories():
 
 @app.route("/add_resource/<category_id>", methods=["GET", "POST"])
 def add_resource(category_id):
-    # get row for category selected in view
-    category = Category.query.filter_by(id=category_id).first()
+    # get row for category selected in view or 404 if not found in db
+    category = Category.query.get_or_404(category_id)
+    #category = Category.query.filter_by(id=category_id).first()
     # get category name from row
     category_name = category.category_name
     if request.method == "POST":
@@ -52,8 +53,14 @@ def add_resource(category_id):
     # if GET. Return categories to template for dropdown
     return render_template("add_resource.html", category_id=category_id, category_name = category_name)
 
-@app.route("/view_resources/<category_id>", methods=["GET"])
+@app.route("/view_resources/<int:category_id>", methods=["GET"])
 def view_resources(category_id):
+    print(category_id)
     # get rows for selected category
+    #resources = Resource.query.get_or_404(category_id)
     resources = Resource.query.filter_by(category_id=category_id).all()
     return render_template("view_resources.html", resources=resources)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
