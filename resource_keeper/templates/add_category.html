@@ -2,14 +2,21 @@
 
 {% block content %}
 <h3 class="text-center pb-4">Add Category</h3>
-<div class="row card bg-info text-white">
-    <form class="col s12" action="{{ url_for('add_category') }}" method="POST">
+<form class="col-sm-12" action="{{ url_for('add_category') }}" method="POST">
+  <div class="mb-3">
+    <label for="category_name" class="form-label">New Category</label>
+    <input autofocus type="text" class="form-control" id="category_name" name="category_name" required>
+  </div>
+  <button type="submit" class="btn btn-primary mb-3">Add</button>
+</form>
+<!--div class="row card" style ="border-style: solid; border-color: brown">
+    <form class="col-sm-12" action="{{ url_for('add_category') }}" method="POST">
         <div class="mb-3">
           <label for="category_name" class="form-label">New Category</label>
-          <input type="text" class="form-control" id="category_name" name="category_name" required>
+          <input autofocus style ="border-style: solid; border-color: brown" type="text" class="form-control" id="category_name" name="category_name" required>
         </div>
-        <button type="submit" class="btn btn-primary mb-3">Submit</button>
+        <button type="submit" class="btn btn-primary mb-3">Add</button>
       </form>
-</div>
+</div-->
 
 {% endblock %}
