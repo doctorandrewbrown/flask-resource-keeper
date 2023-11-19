@@ -73,6 +73,13 @@ def edit_category(category_id):
         return redirect(url_for("home"))
     return render_template("edit_category.html", category=category)
 
+@app.route("/delete_category/<int:category_id>", methods=["GET"]) # id passed in url
+def delete_category(category_id):
+    category = Category.query.get_or_404(category_id)
+    db.session.delete(category)
+    db.session.commit()
+    return redirect(url_for("home"))
+
 
 @app.errorhandler(404)
 def page_not_found(e):
