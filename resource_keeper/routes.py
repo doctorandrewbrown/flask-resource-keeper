@@ -61,6 +61,19 @@ def view_resources(category_id):
     resources = Resource.query.filter_by(category_id=category_id).all()
     return render_template("view_resources.html", resources=resources)
 
+
+@app.route("/edit_category/<int:category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
+    category = Category.query.get_or_404(category_id)
+    print(request.method)
+    if request.method=="POST":
+        category.category_name=request.form.get("category_name")
+        db.session.add(category)
+        db.session.commit()
+        return redirect(url_for("home"))
+    return render_template("edit_category.html", category=category)
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
