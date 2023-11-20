@@ -55,7 +55,6 @@ def add_resource(category_id):
 
 @app.route("/view_resources/<int:category_id>", methods=["GET"])
 def view_resources(category_id):
-    print(category_id)
     # get rows for selected category
     #resources = Resource.query.get_or_404(category_id)
     resources = Resource.query.filter_by(category_id=category_id).all()
@@ -84,3 +83,16 @@ def delete_category(category_id):
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
+
+@app.route("/delete_resource/<int:resource_id>", methods=["GET"]) # id passed in url
+def delete_resource(resource_id):
+    resource = Resource.query.get_or_404(resource_id)
+    category_id = resource.category_id
+    db.session.delete(resource)
+    db.session.commit()
+    return redirect(url_for("view_resources", category_id = category_id))
+'''
+@app.route("/edit_resource/<int:resource_id>", methods=["GET","POST"]) # id passed in url
+def edit_resource(resource_id):
+    pass
+    return redirect(url_for("view_resources"))'''
