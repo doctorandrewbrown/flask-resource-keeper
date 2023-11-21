@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<h3 class="text-center pb-4">Edit Resource</h3>
+<div class="row">
+  <!--input form-->
+  <form class="col-sm-12" action="{{ url_for('edit_resource', resource_id=resource.id)}}" method="POST">
+    <!--select dropdown form input for category-->
+    <select name="category_id" class="form-select mb-3" aria-label="Default select example">
+      <option selected value="{{ category_id }}">{{ current_category }}</option>
+      {% for category in categories %}
+      {% if category.category_name != current_category %}
+      <option value="{{category.id}}">{{ category.category_name }}</option>
+      {% endif %}
+      {% endfor %}
+    </select>
+    <!--form input for resource name-->
+    <div class="mb-3">
+      <label for="resource_name" class="form-label">Resource Name</label>
+      <input autofocus type="text" name="resource_name" class="form-control" id="resource_name" required>
+    </div>
+    <!--form input for resource url-->
+    <div class="mb-3">
+      <label for="resource_url" class="form-label">Resource URL</label>
+      <input type="text" name="resource_url" class="form-control" id="resource_url" required>
+    </div>
+    <!--form input for resource description-->
+    <div class="mb-3">
+      <label for="resource_description" class="form-label">Resource Description</label>
+      <textarea class="form-control" id="resource_description" rows="3" name="resource_description"></textarea>
+    </div>
+    <input class="btn btn-primary" type="submit" value="Add">
+  </form>
+</div>
+{% endblock %}
