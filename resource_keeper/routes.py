@@ -1,3 +1,5 @@
+# Flask "Resource Keeper" App
+#############################
 from flask import render_template, request, redirect, url_for
 from datetime import date
 from resource_keeper import app, db
@@ -64,13 +66,13 @@ def view_resources(category_id):
 @app.route("/edit_category/<int:category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     category = Category.query.get_or_404(category_id)
-    print(request.method)
     if request.method=="POST":
         category.category_name=request.form.get("category_name")
         db.session.add(category)
         db.session.commit()
         return redirect(url_for("home"))
     return render_template("edit_category.html", category=category)
+
 
 @app.route("/delete_category/<int:category_id>", methods=["GET"]) # id passed in url
 def delete_category(category_id):
@@ -91,8 +93,27 @@ def delete_resource(resource_id):
     db.session.delete(resource)
     db.session.commit()
     return redirect(url_for("view_resources", category_id = category_id))
-'''
+
+
 @app.route("/edit_resource/<int:resource_id>", methods=["GET","POST"]) # id passed in url
 def edit_resource(resource_id):
-    pass
-    return redirect(url_for("view_resources"))'''
+    # get row for current resource using resource_id passed in GET
+    resource = Resource.query.get_or_404(resource_id)
+    # get category id from row
+    category_id = resource.category_id
+    # get all categories to pass to select dropdown in edit form view
+    categories = list(Category.query.all())
+    # get current_category value to use in select dropdown
+    current_category = (Category.query.get_or_404(category_id)).category_name
+    if request.method=="POST":
+        # update database with input from form
+        resource.category_name=request.form.get("category_name")
+        resource.resource_url = request.form.get("resource_url")
+        resource.resource_description = request.form.get("resource_description")
+        resource.category_id = request.form.get("category_id")
+        db.session.add(resource)
+        db.session.commit()
+        # redirect user to resources view for original category
+        return redirect(url_for("view_resources", category_id = category_id))
+    return render_template("edit_resource.html", 
+        resource = resource, categories = categories, category_id = category_id, current_category = current_category)
