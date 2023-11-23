@@ -22,14 +22,15 @@
     <!--form input for resource url-->
     <div class="mb-3">
       <label for="resource_url" class="form-label">Resource URL</label>
-      <input type="text" name="resource_url" class="form-control" id="resource_url" required value="{{ resource.resource_url}}">
+      <input type="text" name="resource_url" class="form-control" id="resource_url" disabled value="{{ resource.resource_url}}">
     </div>
     <!--form input for resource description-->
     <div class="mb-3">
       <label for="resource_description" class="form-label">Resource Description</label>
-      <textarea class="form-control" id="resource_description" rows="3" name="resource_description" placeholder="{{ resource.resource_name}}"></textarea>
+      <textarea class="form-control" id="resource_description" rows="3" name="resource_description">{{ resource.resource_description}}</textarea>
     </div>
     <input class="btn btn-primary" type="submit" value="edit">
+    <a href="{{url_for('delete_resource', resource_id=resource.id)}}" class="btn btn-danger" role="button">delete</a>
   </form>
 </div>
 {% endblock %}
