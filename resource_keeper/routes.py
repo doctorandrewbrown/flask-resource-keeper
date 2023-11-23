@@ -47,6 +47,7 @@ def add_resource(category_id):
         resource.resource_name = request.form.get("resource_name")
         resource.resource_url = request.form.get("resource_url")
         resource.resource_description = request.form.get("resource_description")
+        print(resource.resource_description)
         resource.category_id = category_id
         # add new record to db
         db.session.add(resource)
@@ -58,7 +59,6 @@ def add_resource(category_id):
 @app.route("/view_resources/<int:category_id>", methods=["GET"])
 def view_resources(category_id):
     # get rows for selected category
-    #resources = Resource.query.get_or_404(category_id)
     resources = Resource.query.filter_by(category_id=category_id).all()
     return render_template("view_resources.html", resources=resources)
 
@@ -99,7 +99,7 @@ def delete_resource(resource_id):
 def edit_resource(resource_id):
     # get row for current resource using resource_id passed in GET
     resource = Resource.query.get_or_404(resource_id)
-    # get category id from row
+    # get category id from row returned above
     category_id = resource.category_id
     # get all categories to pass to select dropdown in edit form view
     categories = list(Category.query.all())
@@ -108,8 +108,10 @@ def edit_resource(resource_id):
     if request.method=="POST":
         # update database with input from form
         resource.category_name=request.form.get("category_name")
-        resource.resource_url = request.form.get("resource_url")
+        # The resource.url is not got from form in edit view (as below) so db value is unchanged
+        #resource.resource_url = request.form.get("resource_url")
         resource.resource_description = request.form.get("resource_description")
+        resource.resource_name = request.form.get("resource_name")
         resource.category_id = request.form.get("category_id")
         db.session.add(resource)
         db.session.commit()
