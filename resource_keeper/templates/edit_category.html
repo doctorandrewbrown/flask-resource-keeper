@@ -13,7 +13,7 @@
         <label for="category_name" class="form-label">New Category Name</label>
         <input autofocus type="text" class="form-control" id="category_name" name="category_name" required>
     </div>
-    <button type="submit" class="btn btn-primary mb-3">rename</button>
-    <a href="{{url_for('delete_category', category_id=category.id)}}" class="btn btn-danger mb-3" role="button">delete</a>
+    <button type="submit" class="btn mb-3">rename</button>
+    <a href="{{url_for('delete_category', category_id=category.id)}}" class="btn btn-delete mb-3" role="button">delete</a>
 </form>
 {% endblock %}

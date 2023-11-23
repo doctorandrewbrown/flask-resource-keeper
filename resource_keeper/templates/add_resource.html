@@ -13,19 +13,19 @@
     <!--form input for resource name-->
     <div class="mb-3">
       <label for="resource_name" class="form-label">Resource Name</label>
-      <input autofocus type="text" name="resource_name" class="form-control" id="resource_name" required>
+      <input autofocus type="text" name="resource_name" class="form-control" id="resource_name" required maxlength="50">
     </div>
     <!--form input for resource url-->
     <div class="mb-3">
       <label for="resource_url" class="form-label">Resource URL</label>
-      <input type="text" name="resource_url" class="form-control" id="resource_url" required>
+      <input type="text" name="resource_url" class="form-control" id="resource_url" required maxlength="255">
     </div>
     <!--form input for resource description-->
     <div class="mb-3">
       <label for="resource_description" class="form-label">Resource Description</label>
-      <textarea class="form-control" id="resource_description" rows="3" name="resource_description"></textarea>
+      <textarea class="form-control" id="resource_description" rows="3" maxlength="100" name="resource_description">You can add a note here...</textarea>
     </div>
-    <input class="btn btn-primary" type="submit" value="Add">
+    <input class="btn" type="submit" value="Add">
   </form>
 </div>
 

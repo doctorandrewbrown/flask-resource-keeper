@@ -29,8 +29,8 @@
       <label for="resource_description" class="form-label">Resource Description</label>
       <textarea class="form-control" id="resource_description" rows="3" name="resource_description">{{ resource.resource_description}}</textarea>
     </div>
-    <input class="btn btn-primary" type="submit" value="edit">
-    <a href="{{url_for('delete_resource', resource_id=resource.id)}}" class="btn btn-danger" role="button">delete</a>
+    <input class="btn" type="submit" value="edit">
+    <a href="{{url_for('delete_resource', resource_id=resource.id)}}" class="btn btn-delete" role="button">delete</a>
   </form>
 </div>
 {% endblock %}
