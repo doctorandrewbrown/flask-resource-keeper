@@ -16,7 +16,7 @@ class Resource(db.Model):
     # schema for the Resource model
     id = db.Column(db.Integer, primary_key=True)
     resource_name = db.Column(db.String(50), unique=True, nullable=False)
-    resource_url = db.Column(db.VARCHAR(255), unique=True, nullable=False)
+    resource_url = db.Column(db.VARCHAR(100), unique=True, nullable=False)
     resource_description = db.Column(db.Text, nullable=False)
     category_id = db.Column(db.Integer, db.ForeignKey("category.id", ondelete="CASCADE"), nullable=False)
 
