@@ -52,15 +52,17 @@ def add_resource(category_id):
         # add new record to db
         db.session.add(resource)
         db.session.commit()
-        return redirect(url_for("home"))
+        return redirect(url_for("view_resources", category_id = category_id))
     # if GET. Return categories to template for dropdown
     return render_template("add_resource.html", category_id=category_id, category_name = category_name)
 
 @app.route("/view_resources/<int:category_id>", methods=["GET"])
 def view_resources(category_id):
+    # get relevant category_name to show at head of list
+    category = Category.query.get_or_404(category_id).category_name
     # get rows for selected category
     resources = Resource.query.filter_by(category_id=category_id).all()
-    return render_template("view_resources.html", resources=resources)
+    return render_template("view_resources.html", resources=resources, category = category)
 
 
 @app.route("/edit_category/<int:category_id>", methods=["GET", "POST"])
