@@ -1,5 +1,10 @@
 /* Styles for Resource Keeper app*/
 
+/* google font */
+body {
+font-family: 'Barlow', sans-serif;
+}
+
 .nav-header {
   color: #FFBBE1;
   background-color: #B80257;
@@ -24,6 +29,9 @@ a {
 
 .btn:hover {
   background-color:#FC7FB6;
+  border-style: solid ; 
+  border-width: 1px;
+  border-color:#B80257;
   color: #B80257;
 }
 
@@ -50,6 +58,10 @@ body {
 
   .main {
     flex: 1 0 auto;
+  }
+
+  select option {
+    background-color: #FFBBE1;
   }
 
   /* edit_resource view dropdown*/
