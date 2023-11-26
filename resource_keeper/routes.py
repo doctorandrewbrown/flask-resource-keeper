@@ -37,7 +37,6 @@ def edit_categories():
 def add_resource(category_id):
     # get row for category selected in view or 404 if not found in db
     category = Category.query.get_or_404(category_id)
-    #category = Category.query.filter_by(id=category_id).first()
     # get category name from row
     category_name = category.category_name
     if request.method == "POST":
@@ -47,7 +46,6 @@ def add_resource(category_id):
         resource.resource_name = request.form.get("resource_name")
         resource.resource_url = request.form.get("resource_url")
         resource.resource_description = request.form.get("resource_description")
-        print(resource.resource_description)
         resource.category_id = category_id
         # add new record to db
         db.session.add(resource)
@@ -84,9 +82,17 @@ def delete_category(category_id):
     return redirect(url_for("home"))
 
 
+# 404 error handler for non-existant url
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
+
+
+# 500 sql errors handler
+@app.errorhandler(500)
+def page_not_found(e):
+    return render_template('500.html'), 500
+
 
 @app.route("/delete_resource/<int:resource_id>", methods=["GET"]) # id passed in url
 def delete_resource(resource_id):
