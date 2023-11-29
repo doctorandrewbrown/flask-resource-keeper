@@ -30,7 +30,24 @@
       <textarea class="form-control" id="resource_description" maxlength="200" name="resource_description">{{ resource.resource_description}}</textarea>
     </div>
     <input class="btn" type="submit" value="edit">
-    <a href="{{url_for('delete_resource', resource_id=resource.id)}}" class="btn btn-delete" role="button">delete</a>
+    <a data-bs-toggle="modal" data-bs-target="#deleteResourceModal"  class="btn btn-delete" role="button">delete</a>
   </form>
+</div>
+<!--BS5 modal to confirm delete resource-->
+<div class="modal" id="deleteResourceModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{resource.resource_name}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Delete {{resource.resource_name}} category?</p>
+      </div>
+      <div class="modal-footer">
+        <a href="{{url_for('delete_resource', resource_id=resource.id)}}" type="button" class="btn btn-delete">delete</a>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}
