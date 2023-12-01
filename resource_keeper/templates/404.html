@@ -1,2 +1,6 @@
-<h1>Sorry nothing here</h1>
+
+{% extends "base.html" %}
+{% block content %}
+<h1>404, sorry nothing here...</h1>
 <a href="{{url_for('home')}}">back</a>
+{% endblock %}
