@@ -5,6 +5,8 @@ from datetime import date
 from resource_keeper import app, db
 from resource_keeper.models import Category, Resource
 
+
+# route for homepage
 @app.route("/")
 def home():
     # convert cursor object returned by query into python list
@@ -16,6 +18,8 @@ def home():
     # template. It is assigned to value of categories as defined above
     return render_template("categories.html", categories=categories)
 
+
+# route for category
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
@@ -28,11 +32,15 @@ def add_category():
         # GET method
     return render_template("add_category.html")
 
+
+# route for edit category
 @app.route("/edit_categories")
 def edit_categories():
     categories = list(Category.query.all())
     return render_template("edit_categories.html", categories=categories)
 
+
+# route for add resource
 @app.route("/add_resource/<category_id>", methods=["GET", "POST"])
 def add_resource(category_id):
     # get row for category selected in view or 404 if not found in db
@@ -54,6 +62,8 @@ def add_resource(category_id):
     # if GET. Return categories to template for dropdown
     return render_template("add_resource.html", category_id=category_id, category_name = category_name)
 
+
+# route for view resources
 @app.route("/view_resources/<int:category_id>", methods=["GET"])
 def view_resources(category_id):
     # get relevant category_name to show at head of list
@@ -63,6 +73,7 @@ def view_resources(category_id):
     return render_template("view_resources.html", resources=resources, category = category)
 
 
+# route for edit category
 @app.route("/edit_category/<int:category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     category = Category.query.get_or_404(category_id)
@@ -74,6 +85,7 @@ def edit_category(category_id):
     return render_template("edit_category.html", category=category)
 
 
+# route for delete category
 @app.route("/delete_category/<int:category_id>", methods=["GET"]) # id passed in url
 def delete_category(category_id):
     category = Category.query.get_or_404(category_id)
@@ -94,6 +106,7 @@ def page_not_found(e):
     return render_template('500.html'), 500
 
 
+# route for delete resource
 @app.route("/delete_resource/<int:resource_id>", methods=["GET"]) # id passed in url
 def delete_resource(resource_id):
     resource = Resource.query.get_or_404(resource_id)
@@ -103,6 +116,7 @@ def delete_resource(resource_id):
     return redirect(url_for("view_resources", category_id = category_id))
 
 
+# route for edit resource
 @app.route("/edit_resource/<int:resource_id>", methods=["GET","POST"]) # id passed in url
 def edit_resource(resource_id):
     # get row for current resource using resource_id passed in GET
