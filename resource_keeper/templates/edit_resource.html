@@ -17,12 +17,12 @@
     <!--form input for resource name-->
     <div class="mb-3">
       <label for="resource_name" class="form-label">Resource Name</label>
-      <input autofocus type="text" name="resource_name" class="form-control" id="resource_name" required value="{{ resource.resource_name}}">
+      <input autofocus type="text" name="resource_name" maxlength="50" class="form-control" id="resource_name" required value="{{ resource.resource_name}}">
     </div>
     <!--form input for resource url-->
     <div class="mb-3">
       <label for="resource_url" class="form-label">Resource URL</label>
-      <input type="text" name="resource_url" class="form-control" id="resource_url" disabled value="{{ resource.resource_url}}">
+      <input type="text" name="resource_url" class="form-control" id="resource_url" maxlength="100" disabled value="{{ resource.resource_url}}">
     </div>
     <!--form input for resource description-->
     <div class="mb-3">
@@ -42,7 +42,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>Delete {{resource.resource_name}} category?</p>
+        <p>Delete {{resource.resource_name}} resource?</p>
       </div>
       <div class="modal-footer">
         <a href="{{url_for('delete_resource', resource_id=resource.id)}}" type="button" class="btn btn-delete">delete</a>
