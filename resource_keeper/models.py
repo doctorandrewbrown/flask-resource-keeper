@@ -21,6 +21,7 @@ class Resource(db.Model):
     resource_description = db.Column(db.Text, nullable=False)
     category_id = db.Column(db.Integer, db.ForeignKey("category.id", ondelete="CASCADE"), nullable=False)
 
+
     def __repr__(self):
         # __repr__ to represent resource in the form of a string
         return "resource name: {0}".format(self.resource_name)
