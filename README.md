@@ -22,7 +22,7 @@
 | As a site user, I would like to view existing categories
 | As a retuning site user, I would like to view stored resources by category with a short note describing the resource.
 | As a site user, I would like to be able to access a resource.
-| As a site user, I would like to be able to edit a resource (ie go to that url)
+| As a site user, I would like to be able to edit a resource (ie go to that url).
 | As a site user, I would like to be able to edit a category name
 | As a site user, I would like to be able to move a resource to a different category
 | As a site user, I would like to be able to delete a resource
@@ -63,13 +63,6 @@
 - If the user makes a request to a non-existent route a 404 error page is displayed. A back link is provided to return to the homepage.
 - ![screenshot](documentation/images/features-404.png)
 
-
-
-
-
-
-
-
 ## [video](documentation/TEST.mp4)
 
 ## UX
@@ -80,3 +73,83 @@ An attractive coherent color palette for the site was generated using [Colorhunt
 
 #### Typography
  [Barlow](https://fonts.google.com/specimen/Barlow?query=barlow) font was used for all site text.
+## Tools & Technologies Used
+- [Python](https://www.python.org/) used to code flask server and interact with database.
+- [Flask](https://flask.palletsprojects.com/en/3.0.x/) used as the backend python framework.
+- [Flask-Sqlalchemy](https://flask-sqlalchemy.palletsprojects.com/en/3.1.x/) used to provide object-oriented interaction with SQL database.
+- [PostgreSql](https://www.postgresql.org/) used for database management.
+- [Heroku](https://www.heroku.com/) flask application hosting.
+- [ElephantSQL](https://www.elephantsql.com/) flask application hosting.
+- [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
+- [CSS](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
+- [CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) used for responsive layout.
+- [JavaScript](https://www.javascript.com) included for correct functioning of Bootstrap components.
+- [Git](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
+- [GitHub](https://github.com) used for secure online code storage.
+- [GitHub Pages](https://pages.github.com) used for hosting the deployed front-end site.
+- [Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
+- [VSCode](https://code.visualstudio.com/) IDE for development work.
+## Testing
+
+For all testing, please refer to the [TESTING.md](TESTING.md) file.
+
+## Cloud Deployment
+The app was deployed to the Heroku [Heroku](https://www.heroku.com/) cloud platform, and the database was deployed to the [ElephantSQL](https://www.elephantsql.com/) PostgreSQL as a service provider
+
+### Local Deployment
+
+This project can be cloned or forked in order to make a local copy on your own system.
+
+#### Cloning
+
+You can clone the repository by following these steps:
+
+1. Go to the [GitHub repository](https://github.com/doctorandrewbrown/flask-resource-keeper) 
+2. Locate the Code button above the list of files and click it 
+3. Select if you prefer to clone using HTTPS, SSH, or GitHub CLI and click the copy button to copy the URL to your clipboard
+4. Open Git Bash or Terminal
+5. Change the current working directory to the one where you want the cloned directory
+6. In your IDE Terminal, type the following command to clone my repository:
+	- `git clone https://github.com/doctorandrewbrown/flask-resource-keeper.git`
+7. Press Enter to create your local clone.
+
+Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/?autostart=true#https://github.com/doctorandrewbrown/flask-resource-keeper)
+
+Please note that in order to directly open the project in Gitpod, you need to have the browser extension installed.
+A tutorial on how to do that can be found [here](https://www.gitpod.io/docs/configure/user-settings/browser-extension).
+
+#### Forking
+
+By forking the GitHub Repository, we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository.
+You can fork this repository by using the following steps:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/doctorandrewbrown/flask-resource-keeper.git)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
+
+## Credits
+### Media 
+| Source | Location | Notes |
+| --- | --- | --- |
+| [Favicon.io](https://favicon.io/favicon-generator/) | index.html | used to generate website favicon  |
+
+### Content
+
+| Source | Location | Notes |
+| --- | --- | --- |
+| [W3Schools](https://www.w3schools.com/) | whole site | reference for bootstrap, html, css and javascript |
+| [Markdown Guide](https://www.markdownguide.org/cheat-sheet/) | README and TESTING | syntax guide for writing Markdown files |
+| [Html Dropdown](https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_text) | edit resource view | Html form dropdown to chose category |
+| [Html max-length attribute](https://www.w3schools.com/tags/att_input_maxlength.asp) | input forms | attribute to limit form input length |
+| [Html form default value](https://linuxhint.com/add-default-value-for-html-textarea/)| input form view | add placeholder to form fields |
+| [Flask error messages](https://www.digitalocean.com/community/tutorials/how-to-handle-errors-in-a-flask-application) | routes.py | Use of flask error messages|
+| [Bootstrap Modal](https://www.w3schools.com/bootstrap5/bootstrap_modal.php) | edit category and resources views| Prompt confirmation of deletion from database |
+| [Prevent unwanted flexing of bootstrap components](https://www.devsamples.com/css/flexbox-prevent-element-stretching) |resources view| Prevent unwanted flexing of buttons |
+
+
+
+### Acknowledgements
+
+- I would like to thank my Code Institute mentor, Antonio Rodriguez, and Iris Smok of Code Institute, for their help and advice while developing this project. 
