@@ -50,19 +50,25 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 | Mobile (DevTools) | New Category |![screenshot](documentation/images/new-category-mobile.png) | Works as expected |
 | Tablet (DevTools) | New Category |![screenshot](documentation/images/new-category-tablet.png) | Works as expected |
 | Laptop | New Category |![screenshot](documentation/images/new-category-laptop.png) | Works as expected. |
-| Mobile (DevTools) | Edit Resource |![screenshot](documentation/images/edit-category-mobile.png) | Works as expected |
-| Tablet (DevTools) | Edit Resource |![screenshot](documentation/images/edit-category-tablet.png) | Works as expected |
-| Laptop | Edit Resource |![screenshot](documentation/images/edit-category-laptop.png) | Works as expected. |
-
-
-
+| Mobile (DevTools) | Edit Resource |![screenshot](documentation/images/edit-resource-mobile.png) | Works as expected |
+| Tablet (DevTools) | Edit Resource |![screenshot](documentation/images/edit-resource-tablet.png) | Works as expected |
+| Laptop | Edit Resource |![screenshot](documentation/images/edit-resource-laptop.png) | Works as expected. |
 
 
 ## Lighthouse Audit
 
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
 
-| Page | Size | Screenshot | Notes |
+| Page | Size | Screenshot | Notes 
 | --- | --- | --- | --- |
 | Home | Mobile | ![screenshot](documentation/images/testing-lighthouse-mobile.png) | Some minor warnings |
 | Home | Desktop | ![screenshot](documentation/images/testing-lighthouse-laptop.png) | Some minor warnings |
+
+## Defensive Programming
+
+Defensive programming was manually tested with the below user acceptance testing:
+
+| User Action | Expected Result | Pass/Fail | Screenshot |Comments|
+| --- | --- | --- | --- |---| 
+| Click form buttons without filling required form fields | Inform user field is required | Pass | ![screenshot](documentation/images/defence-form-fields.png)|The screenshot shows the "tip" informing user field is required. This protection applies to all required form fields inthe app|
+| Delete a resource or category from database | A modal appears prompting for delete confirmation | Pass | ![screenshot](documentation/images/defence-delete-modal.png)|Modal requiring confirmation is triggered on deleting a category or resource from database|
