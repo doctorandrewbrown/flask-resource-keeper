@@ -7,7 +7,7 @@
         <!--disabled placeholder input-->
         <label for="category_name" class="form-label">Category Name</label>
         <input type="text" name="category_placeholder" class="form-control" id="category_placeholder"
-            placeholder="{{category.category_name}}" selected  disabled>
+            placeholder="{{category.category_name}}"  disabled>
     </div>
 
     <div class="mb-3">
@@ -31,7 +31,7 @@
         <p>Delete {{category.category_name}} category?</p>
       </div>
       <div class="modal-footer">
-        <a href="{{url_for('delete_category', category_id=category.id)}}" type="button" class="btn btn-delete">delete</a>
+        <a href="{{url_for('delete_category', category_id=category.id)}}" class="btn btn-delete">delete</a>
       </div>
     </div>
   </div>

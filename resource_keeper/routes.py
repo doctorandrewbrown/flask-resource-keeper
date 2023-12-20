@@ -131,7 +131,6 @@ def edit_resource(resource_id):
         # update database with input from form
         resource.category_name=request.form.get("category_name")
         # The resource.url is not got from form in edit view (as below) so db value is unchanged
-        #resource.resource_url = request.form.get("resource_url")
         resource.resource_description = request.form.get("resource_description")
         resource.resource_name = request.form.get("resource_name")
         resource.category_id = request.form.get("category_id")
