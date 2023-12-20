@@ -16,11 +16,13 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
   <!--favicon-->
   <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.ico')}}">
+  <title>Resource Keeper</title>
 </head>
 
 <body style="color:#B80257;" >
   <nav class="nav-header navbar navbar-expand-lg">
     <div class="container-fluid">
+      <!--bootstap snippet for navbar-->
       <a class="navbar-brand" href="{{url_for('home')}}" style="color:#FFBBE1;">Resource Keeper</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
