@@ -95,7 +95,6 @@ Defensive programming was manually tested with the below user acceptance testing
 | As a site user, I would like to view stored resources by category with a short note describing the resource. | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/0da052ed-b949-4751-bbf7-3eb3f409bc34) |the video shows a list of resources in the category and on-hover dropdown with resource description|
 | As a site user, I would like to be able to access a resource (ie go to that url). | [video](documentation/videos/access-resource.mp4) |the video demonstrates accessing a resource on stackoverflow|
 | As a site user, I would like to be able to edit a resource. | [video](documentation/videos/edit-resource.mp4) |the video demonstrates accessing a resource on stackoverflow|
-| As a site user, I would like to be able to edit a resource. | [video](documentation/videos/edit-resource.mp4) |the video demonstrates accessing a resource on stackoverflow|
 | As a site user, I would like to be able to edit a category name | [video](documentation/videos/edit-category-name.mp4) |the video demonstrates editing (changing) a category name|
 | As a site user, I would like to be able to move a resource to a different category | [video](documentation/videos/move-resource.mp4) |the video demonstrates moving a resource (test resource) from the flask category to wordpress category|
 | As a site user, I would like to be able to delete a resource | [video](documentation/videos/delete-resource.mp4) |the video demonstrates deleting a resource|
