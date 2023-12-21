@@ -72,3 +72,19 @@ Defensive programming was manually tested with the below user acceptance testing
 | --- | --- | --- | --- |---| 
 | Click form buttons without filling required form fields | Inform user field is required | Pass | ![screenshot](documentation/images/defence-form-fields.png)|The screenshot shows the "tip" informing user field is required. This protection applies to all required form fields inthe app|
 | Delete a resource or category from database | A modal appears prompting for delete confirmation | Pass | ![screenshot](documentation/images/defence-delete-modal.png)|Modal requiring confirmation is triggered on deleting a category or resource from database|
+
+## User Story Testing
+
+| User Story | Demo Video | Comments |
+| --- | --- |----| 
+| As a site user, I would like to create a new resource category | [video](documentation/videos/create-new-category.mp4) |the video shows creation of a new category|
+| As a site user, I would like to create a new resource within a category | [video](documentation/videos/create-new-resource.mp4) |the video shows creation of a new resource|
+| As a site user, I would like to view stored resources by category with a short note describing the resource. | [video](documentation/videos/view-resource-description.mp4) |the video shows a list of resources in the category and on-hover dropdown with resource description|
+| As a site user, I would like to be able to access a resource (ie go to that url). | [video](documentation/videos/access-resource.mp4) |the video demonstrates accessing a resource on stackoverflow|
+| As a site user, I would like to be able to edit a resource. | [video](documentation/videos/edit-resource.mp4) |the video demonstrates accessing a resource on stackoverflow|
+| As a site user, I would like to be able to edit a resource. | [video](documentation/videos/edit-resource.mp4) |the video demonstrates accessing a resource on stackoverflow|
+| As a site user, I would like to be able to edit a category name | [video](documentation/videos/edit-category-name.mp4) |the video demonstrates editing (changing) a category name|
+| As a site user, I would like to be able to move a resource to a different category | [video](documentation/videos/move-resource.mp4) |the video demonstrates moving a resource (test resource) from the flask category to wordpress category|
+| As a site user, I would like to be able to delete a resource | [video](documentation/videos/delete-resource.mp4) |the video demonstrates deleting a resource|
+| As a site user, I would like to be able to delete a category | [video](documentation/videos/delete-category.mp4) |the video demonstrates deleting a category|
+

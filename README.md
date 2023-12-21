@@ -18,11 +18,11 @@
 |User action |
 |--------|
 | As a site user, I would like to create a new resource category
-| As a site user, I would like to create a new resource within the category
+| As a site user, I would like to create a new resource within a category
 | As a site user, I would like to view existing categories
 | As a retuning site user, I would like to view stored resources by category with a short note describing the resource.
-| As a site user, I would like to be able to access a resource.
-| As a site user, I would like to be able to edit a resource (ie go to that url).
+| As a site user, I would like to be able to access a resource (ie go to that url).
+| As a site user, I would like to be able to edit a resource.
 | As a site user, I would like to be able to edit a category name
 | As a site user, I would like to be able to move a resource to a different category
 | As a site user, I would like to be able to delete a resource
