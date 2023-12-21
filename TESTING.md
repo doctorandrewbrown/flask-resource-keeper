@@ -1,4 +1,6 @@
+
 # Testing
+
 
 Return back to the [README.md](README.md) file.
 
@@ -86,5 +88,5 @@ Defensive programming was manually tested with the below user acceptance testing
 | As a site user, I would like to be able to edit a category name | [video](documentation/videos/edit-category-name.mp4) |the video demonstrates editing (changing) a category name|
 | As a site user, I would like to be able to move a resource to a different category | [video](documentation/videos/move-resource.mp4) |the video demonstrates moving a resource (test resource) from the flask category to wordpress category|
 | As a site user, I would like to be able to delete a resource | [video](documentation/videos/delete-resource.mp4) |the video demonstrates deleting a resource|
-| As a site user, I would like to be able to delete a category | [video](documentation/videos/delete-category.mp4) |the video demonstrates deleting a category|
+| As a site user, I would like to be able to delete a category | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/f2a5afa0-6bea-4db3-94eb-1b6b8fe1b4b6) |the video demonstrates deleting a category|
 
