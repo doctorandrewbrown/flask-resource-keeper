@@ -63,8 +63,6 @@
 - If the user makes a request to a non-existent route a 404 error page is displayed. A back link is provided to return to the homepage.
 - ![screenshot](documentation/images/features-404.png)
 
-## [video](documentation/TEST.mp4)
-
 ## UX
 #### Colour palette 
 An attractive coherent color palette for the site was generated using [Colorhunt](https://colorhunt.co/palette/b80257dd356efc7fb6ffbbe1) and is shown below.
