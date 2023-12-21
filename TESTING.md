@@ -2,8 +2,6 @@
 # Testing
 
 
-
-
 Return back to the [README.md](README.md) file.
 
 ### HTML
@@ -85,7 +83,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | As a site user, I would like to create a new resource within a category | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/6231e9cd-6a9a-437f-9e5b-48802a5fdbc2) |the video shows creation of a new resource|
 | As a site user, I would like to view stored resources by category with a short note describing the resource. | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/0da052ed-b949-4751-bbf7-3eb3f409bc34) |the video shows a list of resources in the category and on-hover dropdown with resource description|
 | As a site user, I would like to be able to access a resource (ie go to that url). | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/de9e84ae-a0f7-48a5-8ff1-282db8b4f7bb) |the video demonstrates accessing a resource on stackoverflow|
-| As a site user, I would like to be able to edit a resource. | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/e4a59f62-c0c0-4b96-955e-e2c6ac08b9bc) |the video demonstrates accessing a resource on stackoverflow|
+| As a site user, I would like to be able to edit a resource. | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/e15bc34a-37d0-4225-b114-90274c33f697) |the video demonstrates editing resource name|
 | As a site user, I would like to be able to edit a category name | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/d4ded041-5818-4ced-b0cc-d1f201799633) |the video demonstrates editing (changing) a category name|
 | As a site user, I would like to be able to move a resource to a different category | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/b8233b09-bd47-41d2-a830-f3fbac734c9d) |the video demonstrates moving a resource (test resource) from the flask category to wordpress category|
 | As a site user, I would like to be able to delete a resource | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/15e60c9b-085f-40e9-ae6a-499989866082) |the video demonstrates deleting a resource|
