@@ -2,6 +2,17 @@
 # Testing
 
 
+
+
+
+
+
+
+
+
+
+
+
 Return back to the [README.md](README.md) file.
 
 ### HTML
@@ -79,9 +90,9 @@ Defensive programming was manually tested with the below user acceptance testing
 
 | User Story | Demo Video | Comments |
 | --- | --- |----| 
-| As a site user, I would like to create a new resource category | [video](documentation/videos/create-new-category.mp4) |the video shows creation of a new category|
-| As a site user, I would like to create a new resource within a category | [video](documentation/videos/create-new-resource.mp4) |the video shows creation of a new resource|
-| As a site user, I would like to view stored resources by category with a short note describing the resource. | [video](documentation/videos/view-resource-description.mp4) |the video shows a list of resources in the category and on-hover dropdown with resource description|
+| As a site user, I would like to create a new resource category | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/17757314-3340-48a9-899a-a10764a2383e) |the video shows creation of a new category|
+| As a site user, I would like to create a new resource within a category | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/6231e9cd-6a9a-437f-9e5b-48802a5fdbc2) |the video shows creation of a new resource|
+| As a site user, I would like to view stored resources by category with a short note describing the resource. | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/0da052ed-b949-4751-bbf7-3eb3f409bc34) |the video shows a list of resources in the category and on-hover dropdown with resource description|
 | As a site user, I would like to be able to access a resource (ie go to that url). | [video](documentation/videos/access-resource.mp4) |the video demonstrates accessing a resource on stackoverflow|
 | As a site user, I would like to be able to edit a resource. | [video](documentation/videos/edit-resource.mp4) |the video demonstrates accessing a resource on stackoverflow|
 | As a site user, I would like to be able to edit a resource. | [video](documentation/videos/edit-resource.mp4) |the video demonstrates accessing a resource on stackoverflow|
