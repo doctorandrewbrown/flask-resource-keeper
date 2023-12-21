@@ -74,8 +74,10 @@ Defensive programming was manually tested with the below user acceptance testing
 
 | User Action | Expected Result | Pass/Fail | Screenshot |Comments|
 | --- | --- | --- | --- |---| 
-| Click form buttons without filling required form fields | Inform user field is required | Pass | ![screenshot](documentation/images/defence-form-fields.png)|The screenshot shows the "tip" informing user field is required. This protection applies to all required form fields inthe app|
+| Click form buttons without filling required form fields | Inform user field is required | Pass | ![screenshot](documentation/images/defence-form-fields.png)|The screenshot shows the "tip" informing user field is required. This protection applies to all required form fields in the app|
 | Delete a resource or category from database | A modal appears prompting for delete confirmation | Pass | ![screenshot](documentation/images/defence-delete-modal.png)|Modal requiring confirmation is triggered on deleting a category or resource from database|
+| Visit non-existent route | 404 not found page is shown | Pass | ![screenshot](documentation/images/defence-404.png)|404 error page is shown and link back to home page provided|
+| User experiences a server error | 500 server error page is shown| Pass | ![screenshot](documentation/images/defence-500.png)|500 error page is shown and link back to home page provided|
 
 ## User Story Testing
 

@@ -78,16 +78,16 @@ An attractive coherent color palette for the site was generated using [Colorhunt
 - [Flask-Sqlalchemy](https://flask-sqlalchemy.palletsprojects.com/en/3.1.x/) used to provide object-oriented interaction with SQL database.
 - [PostgreSql](https://www.postgresql.org/) used for database management.
 - [Heroku](https://www.heroku.com/) flask application hosting.
-- [ElephantSQL](https://www.elephantsql.com/) flask application hosting.
+- [ElephantSQL](https://www.elephantsql.com/) database hosting.
 - [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
 - [CSS](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
 - [CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) used for responsive layout.
 - [JavaScript](https://www.javascript.com) included for correct functioning of Bootstrap components.
-- [Git](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
+- [Git](https://git-scm.com) used for version control, continuous deployment to Heroku and hosting video assets. (`git add`, `git commit`, `git push`)
 - [GitHub](https://github.com) used for secure online code storage.
-- [GitHub Pages](https://pages.github.com) used for hosting the deployed front-end site.
 - [Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
 - [VSCode](https://code.visualstudio.com/) IDE for development work.
+- [Jinja](https://jinja.palletsprojects.com/en/3.1.x/) used in html templates.
 ## Testing
 
 For all testing, please refer to the [TESTING.md](TESTING.md) file.
@@ -146,6 +146,8 @@ You can fork this repository by using the following steps:
 | [Flask error messages](https://www.digitalocean.com/community/tutorials/how-to-handle-errors-in-a-flask-application) | routes.py | Use of flask error messages|
 | [Bootstrap Modal](https://www.w3schools.com/bootstrap5/bootstrap_modal.php) | edit category and resources views| Prompt confirmation of deletion from database |
 | [Prevent unwanted flexing of bootstrap components](https://www.devsamples.com/css/flexbox-prevent-element-stretching) |resources view| Prevent unwanted flexing of buttons |
+| [Github video uoloads](https://github.blog/2021-05-13-video-uploads-available-github/) |documentation| How to include MP4 video |
+
 
 
 
