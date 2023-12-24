@@ -92,8 +92,25 @@ An attractive coherent color palette for the site was generated using [Colorhunt
 
 For all testing, please refer to the [TESTING.md](TESTING.md) file.
 
-## Cloud Deployment
+## Deployment
+### Cloud Deployment
 The app was deployed to the Heroku [Heroku](https://www.heroku.com/) cloud platform, and the database was deployed to the [ElephantSQL](https://www.elephantsql.com/) PostgreSQL as a service provider
+### Deployment to Heroku
+1. Generate the requirements.txt file with the following command in the terminal. After you run this command a new file called requirements.txt should appear in your root directory `pip3 freeze --local > requirements.txt`.
+2. Heroku requires a Procfile containing a command to run your program. Inside the root directory of your project create the new file. It must be called Procfile with a capital P, otherwise Heroku won’t recognise it
+3. Inside the file, add the following command, `web: python run.py`
+4. Save all your files and then add, commit and push your changes to GitHub
+5. Log into Heroku.com and click “New” and then “Create a new app”
+6. Choose a unique name for your app, select the region closest to you and click “Create app”
+7. Go to the Settings tab of your new app and click "Reveal Config Vars".
+8. Add a Config Var called DATABASE_URL and paste your database URL in as the value. 
+9. Add remaining Config Var's as required
+10. In Heroku navigate to the “Deploy” tab of your app and in the Deployment method section, select “Connect to GitHub”
+11. To allow deployment on pushing to Github select Enable Automatic Deploys.
+12. To enable database start by clicking the “More” button and select “Run console”.
+13. Enable python3 console and enter the following ```from taskmanager import db 
+db.create_all()```
+14. To open app click the “Open app” button
 
 ### Local Deployment
 
@@ -127,6 +144,25 @@ You can fork this repository by using the following steps:
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/doctorandrewbrown/flask-resource-keeper.git)
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
+## Wireframes
+## Security
+
+The following basic security measures were taken to protect the deployed app.
+- The debug parameter was set to ```False``` in the deployed version of the ```run.py``` file.
+```python
+if __name__ == "__main__":
+    app.run(
+        host=os.environ.get("IP"),
+        port=int(os.environ.get("PORT")),
+        # Set debug to dev or production mode
+        debug=False
+    )
+```
+- The `config vars` in Heroku were set to`False` for `debug`
+- ![screenshot](documentation/images/security-configvars.png)
+## Database Schema
+## Bugs
+## flash
 
 ## Credits
 ### Media 
@@ -147,12 +183,7 @@ You can fork this repository by using the following steps:
 | [Bootstrap Modal](https://www.w3schools.com/bootstrap5/bootstrap_modal.php) | edit category and resources views| Prompt confirmation of deletion from database |
 | [Prevent unwanted flexing of bootstrap components](https://www.devsamples.com/css/flexbox-prevent-element-stretching) |resources view| Prevent unwanted flexing of buttons |
 | [Github video uoloads](https://github.blog/2021-05-13-video-uploads-available-github/) |documentation| How to include MP4 video |
-## Wireframes
-## Security
-The following basic security measures were taken to protect the deployed app.
-- 
-## Database Schema
-## Bugs
+
 
 
 ### Acknowledgements

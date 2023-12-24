@@ -20,17 +20,8 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 | File | Jigsaw URL | Screenshot | Notes|
 | --- | --- | --- | --- |
 | style.css | [Jigsaw](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fresource-keeper-9faa6ecfb87f.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) |![screenshot](documentation/images/testing-css-w3c.png)| Some warnings about Bootstrap classes when testing live site. Screenshot shows css code tested by direct input to validator
-## Browser Compatibility
 
-I've tested my deployed project on multiple browsers to check for compatibility issues.
-
-| Browser | Screenshot | Notes |
-| --- | --- | --- |
-| Chrome | ![screenshot](documentation/images/testing-browser-chrome.png) | Works as expected |
-| Firefox | ![screenshot](documentation/images/testing-browser-firefox.png) | Works as expected |
-| Opera | ![screenshot](documentation/images/testing-browser-opera.png) | Works as expected |
-
-## PEP8 Compatibility
+### Python PEP8 Compatibility
 
 I have used the [CI Python Linter](https://pep8ci.herokuapp.com/)  to check Python code for compatibility with the [PEP8 standard](https://peps.python.org/pep-0008/).
 
@@ -41,8 +32,17 @@ I have used the [CI Python Linter](https://pep8ci.herokuapp.com/)  to check Pyth
 | __init___.py | ![screenshot](documentation/images/linter-init.png) | No errors or warnings |
 | models.py | ![screenshot](documentation/images/linter-models.png) | No errors or warnings |
 
-## Responsiveness
+## Browser Compatibility
 
+I've tested my deployed project on multiple browsers to check for compatibility issues.
+
+| Browser | Screenshot | Notes |
+| --- | --- | --- |
+| Chrome | ![screenshot](documentation/images/testing-browser-chrome.png) | Works as expected |
+| Firefox | ![screenshot](documentation/images/testing-browser-firefox.png) | Works as expected |
+| Opera | ![screenshot](documentation/images/testing-browser-opera.png) | Works as expected |
+
+## Responsiveness
 
 I've tested my deployed project on multiple devices to check for responsiveness issues.
 
@@ -89,6 +89,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | User experiences a server error | 500 server error page is shown| Pass | ![screenshot](documentation/images/defence-500.png)|500 error page is shown and link back to home page provided|
 
 ## User Story Testing
+User story testing ensured that all features were tested as well as CRUD functionality in that users can create, read, update and delete records as demonstrated below.
 
 | User Story | Demo Video | Comments |
 | --- | --- |----| 
