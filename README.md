@@ -147,8 +147,12 @@ You can fork this repository by using the following steps:
 | [Bootstrap Modal](https://www.w3schools.com/bootstrap5/bootstrap_modal.php) | edit category and resources views| Prompt confirmation of deletion from database |
 | [Prevent unwanted flexing of bootstrap components](https://www.devsamples.com/css/flexbox-prevent-element-stretching) |resources view| Prevent unwanted flexing of buttons |
 | [Github video uoloads](https://github.blog/2021-05-13-video-uploads-available-github/) |documentation| How to include MP4 video |
-
-
+## Wireframes
+## Security
+The following basic security measures were taken to protect the deployed app.
+- 
+## Database Schema
+## Bugs
 
 
 ### Acknowledgements

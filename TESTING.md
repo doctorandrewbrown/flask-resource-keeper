@@ -30,6 +30,17 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 | Firefox | ![screenshot](documentation/images/testing-browser-firefox.png) | Works as expected |
 | Opera | ![screenshot](documentation/images/testing-browser-opera.png) | Works as expected |
 
+## PEP8 Compatibility
+
+I have used the [CI Python Linter](https://pep8ci.herokuapp.com/)  to check Python code for compatibility with the [PEP8 standard](https://peps.python.org/pep-0008/).
+
+| Python File | Screenshot | Notes |
+| --- | --- | --- |
+| routes.py | ![screenshot](documentation/images/linter-routes.png) | No errors or warnings |
+| run.py | ![screenshot](documentation/images/linter-run.png) | No errors or warnings |
+| __init___.py | ![screenshot](documentation/images/linter-init.png) | No errors or warnings |
+| models.py | ![screenshot](documentation/images/linter-models.png) | No errors or warnings |
+
 ## Responsiveness
 
 
