@@ -14,7 +14,7 @@ def home():
     # row fields are accessed via dot notation
     categories = list(Category.query.all())
 
-    # categories argument in render_template() is variable name passed to 
+    # categories argument in render_template() is variable name passed to
     # template. It is assigned to value of categories as defined above
     return render_template("categories.html", categories=categories)
 
@@ -50,17 +50,20 @@ def add_resource(category_id):
     if request.method == "POST":
         # create new row in Resource table
         resource = Resource()
-        # assign values from input form to fields in new Resource row (see models.py)
+        # assign values from input form to fields in new Resource row
+        # (see models.py)
         resource.resource_name = request.form.get("resource_name")
         resource.resource_url = request.form.get("resource_url")
-        resource.resource_description = request.form.get("resource_description")
+        resource.resource_description = request.form.get(
+                                                        "resource_description")
         resource.category_id = category_id
         # add new record to db
         db.session.add(resource)
         db.session.commit()
-        return redirect(url_for("view_resources", category_id = category_id))
+        return redirect(url_for("view_resources", category_id=category_id))
     # if GET. Return categories to template for dropdown
-    return render_template("add_resource.html", category_id=category_id, category_name = category_name)
+    return render_template("add_resource.html", category_id=category_id,
+                           category_name=category_name)
 
 
 # route for view resources
@@ -70,15 +73,16 @@ def view_resources(category_id):
     category = Category.query.get_or_404(category_id).category_name
     # get rows for selected category
     resources = Resource.query.filter_by(category_id=category_id).all()
-    return render_template("view_resources.html", resources=resources, category = category)
+    return render_template("view_resources.html",
+                           resources=resources, category=category)
 
 
 # route for edit category
 @app.route("/edit_category/<int:category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     category = Category.query.get_or_404(category_id)
-    if request.method=="POST":
-        category.category_name=request.form.get("category_name")
+    if request.method == "POST":
+        category.category_name = request.form.get("category_name")
         db.session.add(category)
         db.session.commit()
         return redirect(url_for("home"))
@@ -86,7 +90,8 @@ def edit_category(category_id):
 
 
 # route for delete category
-@app.route("/delete_category/<int:category_id>", methods=["GET"]) # id passed in url
+@app.route("/delete_category/<int:category_id>", methods=["GET"])
+# id passed in url
 def delete_category(category_id):
     category = Category.query.get_or_404(category_id)
     db.session.delete(category)
@@ -107,17 +112,19 @@ def page_not_found(e):
 
 
 # route for delete resource
-@app.route("/delete_resource/<int:resource_id>", methods=["GET"]) # id passed in url
+@app.route("/delete_resource/<int:resource_id>", methods=["GET"])
+# id passed in url
 def delete_resource(resource_id):
     resource = Resource.query.get_or_404(resource_id)
     category_id = resource.category_id
     db.session.delete(resource)
     db.session.commit()
-    return redirect(url_for("view_resources", category_id = category_id))
+    return redirect(url_for("view_resources", category_id=category_id))
 
 
 # route for edit resource
-@app.route("/edit_resource/<int:resource_id>", methods=["GET","POST"]) # id passed in url
+@app.route("/edit_resource/<int:resource_id>", methods=["GET", "POST"])
+# id passed in url
 def edit_resource(resource_id):
     # get row for current resource using resource_id passed in GET
     resource = Resource.query.get_or_404(resource_id)
@@ -127,16 +134,21 @@ def edit_resource(resource_id):
     categories = list(Category.query.all())
     # get current_category value to use in select dropdown
     current_category = (Category.query.get_or_404(category_id)).category_name
-    if request.method=="POST":
+    if request.method == "POST":
         # update database with input from form
-        resource.category_name=request.form.get("category_name")
-        # The resource.url is not got from form in edit view (as below) so db value is unchanged
-        resource.resource_description = request.form.get("resource_description")
+        resource.category_name = request.form.get("category_name")
+        # The resource.url is not got from form in edit view
+        # (as below) so db value is unchanged
+        resource.resource_description = request.form.get(
+            "resource_description")
         resource.resource_name = request.form.get("resource_name")
         resource.category_id = request.form.get("category_id")
         db.session.add(resource)
         db.session.commit()
         # redirect user to resources view for original category
-        return redirect(url_for("view_resources", category_id = category_id))
-    return render_template("edit_resource.html", 
-        resource = resource, categories = categories, category_id = category_id, current_category = current_category)
+        return redirect(url_for("view_resources", category_id=category_id))
+    return render_template(
+        "edit_resource.html",
+        resource=resource,
+        categories=categories, category_id=category_id,
+        current_category=current_category)
