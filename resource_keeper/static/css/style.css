@@ -15,9 +15,12 @@ font-family: 'Barlow', sans-serif;
 .nav-link {
   color: #FFBBE1;
 }
-footer {
-    background-color:#FC7FB6;
+footer > div > p {
     color: #FFBBE1;  
+}
+
+footer {
+  background-color:#FC7FB6; 
 }
 
 a {
