@@ -107,5 +107,9 @@ User story testing ensured that all features were tested as well as CRUD functio
 | As a site user, I would like to have custom error pages (http error codes 500 and 404) | ![screenshot](documentation/images/defence-404.png) |custom 404 error page displayed to user|
 | As a site user, I would like to have custom error pages (http error codes 500 and 404) | ![screenshot](documentation/images/defence-500.png) |custom 500 error page displayed to user|
 | As a site user, I would like to be able to delete a category | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/35dc7818-fbe7-4e1c-9d07-b47a365774d8) |the video demonstrates deleting a category|
-| As a site user, I would like to be able to easily return to home page via main navigation ie Brand and Home links | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/35dc7818-fbe7-4e1c-9d07-b47a365774d8) |the video demonstrates return to home page from inner pages|
+| As a site user, I would like to be able to easily return to home page via main navigation ie Brand and Home links | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/8b4e403e-de64-41fa-991b-62d9a5301aee) |the video demonstrates return to home page from inner pages|
+
+
+
+
 
