@@ -79,7 +79,8 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 ## Defensive Programming
 
-Defensive programming was manually tested with the below user acceptance testing:
+Defensive programming was manually tested with the below user acceptance testing. 
+Note that tests of custom error pages also satisfy aspects of "User story testing".
 
 | User Action | Expected Result | Pass/Fail | Screenshot |Comments|
 | --- | --- | --- | --- |---| 
@@ -87,6 +88,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | Delete a resource or category from database | A modal appears prompting for delete confirmation | Pass | ![screenshot](documentation/images/defence-delete-modal.png)|Modal requiring confirmation is triggered on deleting a category or resource from database|
 | Visit non-existent route | 404 not found page is shown | Pass | ![screenshot](documentation/images/defence-404.png)|404 error page is shown and link back to home page provided|
 | User experiences a server error | 500 server error page is shown| Pass | ![screenshot](documentation/images/defence-500.png)|500 error page is shown and link back to home page provided|
+
 
 ## User Story Testing
 User story testing ensured that all features were tested as well as CRUD functionality in that users can create, read, update and delete records as demonstrated below.
@@ -102,4 +104,8 @@ User story testing ensured that all features were tested as well as CRUD functio
 | As a site user, I would like to be able to move a resource to a different category | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/b8233b09-bd47-41d2-a830-f3fbac734c9d) |the video demonstrates moving a resource (test resource) from the flask category to wordpress category|
 | As a site user, I would like to be able to delete a resource | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/15e60c9b-085f-40e9-ae6a-499989866082) |the video demonstrates deleting a resource|
 | As a site user, I would like to be able to delete a category | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/35dc7818-fbe7-4e1c-9d07-b47a365774d8) |the video demonstrates deleting a category|
+| As a site user, I would like to have custom error pages (http error codes 500 and 404) | ![screenshot](documentation/images/defence-404.png) |custom 404 error page displayed to user|
+| As a site user, I would like to have custom error pages (http error codes 500 and 404) | ![screenshot](documentation/images/defence-500.png) |custom 500 error page displayed to user|
+| As a site user, I would like to be able to delete a category | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/35dc7818-fbe7-4e1c-9d07-b47a365774d8) |the video demonstrates deleting a category|
+| As a site user, I would like to be able to easily return to home page via main navigation ie Brand and Home links | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/35dc7818-fbe7-4e1c-9d07-b47a365774d8) |the video demonstrates return to home page from inner pages|
 
