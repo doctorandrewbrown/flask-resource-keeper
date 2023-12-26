@@ -33,12 +33,10 @@
 | As a site user, I would like to be able to easily return to home page via main navigation (ie Brand and Home links).
 | As a site user, I would like immediate visual feedback when creating a new category
 | As a site user, I would like immediate visual feedback when creating a new resource
-| As a site user, I would like immediate visual feedback when deleting a category
+| As a sitse user, I would like immediate visual feedback when deleting a category
 | As a site user, I would like immediate visual feedback when deleting a resource
 | As a site user, I would like immediate visual feedback when updating a category
-| As a site user, I would like immediate visual feedback when updating a resource
-
-
+| As a site user, I would like immediate visual feedback when updating resource details
 ||
 ## Features
 - The features included were intended to test the user stories detailed above.
