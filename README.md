@@ -28,9 +28,11 @@
 | As a site user, I would like to be able to move a resource to a different category
 | As a site user, I would like to be able to delete a resource
 | As a site user, I would like to be able to delete a category
+| As a site user, I would like to have custom error pages displayed where appropriate
+| As a site user, I would like to be able to easily return to home page via main navigation ie Brand and Home links
 ||
 ## Features
-- The features included were intended to serve the user stories detailed above.
+- The features included were intended to test the user stories detailed above.
 ### Home Page View
 - General view shown below shows main navigation (which is included on all pages)and the button to go to the "add category" view. Also shown are cards showing existing resource categories in the database. 
 - ![screenshot](documentation/images/features-homepage.png)
@@ -41,7 +43,7 @@
 ### Add New Category View
 - This view is accessed via the "New Category" button shown above. The view provides an input form for the user to create a new category and add this to the database
 - ![screenshot](documentation/images/features-add-category.png)
-### View Stored Resources View
+### View Stored Resources
 - This view is accessed via the "view" button in the category cards shown above. The view provides a list of the resources for a given category. A link is provided to go to the resource url. A "details" dropdown on-hover, shows a short description of the resource from the database. An "edit" button takes the user to the view to edit the resource.
 - ![screenshot](documentation/images/features-resources-view.png)
 ### Edit Category View
@@ -64,14 +66,19 @@
 - If the user makes a request to a non-existent route a 404 error page is displayed. A back link is provided to return to the homepage.
 - ![screenshot](documentation/images/features-404.png)
 
+### 500 Error Page
+- In case of a server error a page informing the user is provided with a link back to homepage
+- ![screenshot](documentation/images/defence-500.png)
+
 ## UX
 #### Colour palette 
-An attractive coherent color palette for the site was generated using [Colorhunt](https://colorhunt.co/palette/b80257dd356efc7fb6ffbbe1) and is shown below.
+An attractive coherent color palette for the site was chosen from [Colorhunt](https://colorhunt.co/palette/b80257dd356efc7fb6ffbbe1) and is shown below.
 
 ![screenshot](documentation/images/colorPalette.png)
 
 #### Typography
  [Barlow](https://fonts.google.com/specimen/Barlow?query=barlow) font was used for all site text.
+
 ## Tools & Technologies Used
 - [Python](https://www.python.org/) used to code flask server and interact with database.
 - [Flask](https://flask.palletsprojects.com/en/3.0.x/) used as the backend python framework.
@@ -88,6 +95,7 @@ An attractive coherent color palette for the site was generated using [Colorhunt
 - [Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
 - [VSCode](https://code.visualstudio.com/) IDE for development work.
 - [Jinja](https://jinja.palletsprojects.com/en/3.1.x/) used in html templates.
+- [Code Institute Python PEP8 Linter](https://peps.python.org/pep-0008/) Used to check python code for pep8 compliance.
 ## Testing
 
 For all testing, please refer to the [TESTING.md](TESTING.md) file.
@@ -108,8 +116,13 @@ The app was deployed to the Heroku [Heroku](https://www.heroku.com/) cloud platf
 10. In Heroku navigate to the “Deploy” tab of your app and in the Deployment method section, select “Connect to GitHub”
 11. To allow deployment on pushing to Github select Enable Automatic Deploys.
 12. To enable database start by clicking the “More” button and select “Run console”.
-13. Enable python3 console and enter the following ```from taskmanager import db 
-db.create_all()```
+13. Enable python3 console and enter the following to dreate database tables.
+
+```python
+from taskmanager import db
+db.create_all()
+```
+
 14. To open app click the “Open app” button
 
 ### Local Deployment
@@ -126,7 +139,9 @@ You can clone the repository by following these steps:
 4. Open Git Bash or Terminal
 5. Change the current working directory to the one where you want the cloned directory
 6. In your IDE Terminal, type the following command to clone my repository:
-	- `git clone https://github.com/doctorandrewbrown/flask-resource-keeper.git`
+	```bash
+    git clone https://github.com/doctorandrewbrown/flask-resource-keeper.git
+    ```
 7. Press Enter to create your local clone.
 
 Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
@@ -148,7 +163,8 @@ You can fork this repository by using the following steps:
 ## Security
 
 The following basic security measures were taken to protect the deployed app.
-- The debug parameter was set to ```False``` in the deployed version of the ```run.py``` file.
+- The ```debug``` parameter was set to ```False``` in the heroku (production) version of the ```run.py``` file
+(in the locally deployed version ```debug``` can be set to ```True``` for development purposes).
 ```python
 if __name__ == "__main__":
     app.run(
@@ -160,8 +176,11 @@ if __name__ == "__main__":
 ```
 - The `config vars` in Heroku were set to`False` for `debug`
 - ![screenshot](documentation/images/security-configvars.png)
+
 ## Database Schema
+
 ## Bugs
+- Edit button streching 
 ## flash
 
 ## Credits
