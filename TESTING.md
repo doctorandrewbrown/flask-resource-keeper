@@ -2,6 +2,10 @@
 # Testing
 
 
+
+
+
+
 Return back to the [README.md](README.md) file.
 
 ### HTML
@@ -108,10 +112,13 @@ Note that tests of custom error pages also satisfy aspects of "User story testin
 | As a site user, I would like to have custom error pages (http error codes 500 and 404) | ![screenshot](documentation/images/defence-500.png) |custom 500 error page displayed to user|
 | As a site user, I would like to be able to delete a category | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/35dc7818-fbe7-4e1c-9d07-b47a365774d8) |the video demonstrates deleting a category|
 | As a site user, I would like to be able to easily return to home page via main navigation ie Brand and Home links | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/8b4e403e-de64-41fa-991b-62d9a5301aee) |the video demonstrates return to home page from an inner pages (in the example video, CSS category resources view) back to homepage via main navigation links. Similar tests were satisfactory for all pages in the app|
-| As a site user, I would like immediate visual feedback when creating a new category |[video]() |when a new category is created the user is redirected to a view showing categories with new category included|
-| As a site user, I would like immediate visual feedback when creating a new resource |[video]() |when a new resource is created the user is redirected to a view showing resources with new resource included|
-| As a site user, I would like immediate visual feedback when deleting category |[video]() |when a category is deleted the user is redirected to a view showing categories with deleted category omitted|
-| As a site user, I would like immediate visual feedback when deleting resource |[video]() |when a resource is deleted the user is redirected to a view showing resources with deleted resource omitted|
-| As a site user, I would like immediate visual feedback when updating resource details |[video]() |when a resource details are updated the user is redirected to a view showing the updated details|
+| As a site user, I would like immediate visual feedback when creating a new category |[video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/3349a758-b71b-403c-8d90-67d1d1ae5ac0) |when a new category is created the user is redirected to a view showing categories with new category included|
+| As a site user, I would like immediate visual feedback when creating a new resource |[video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/2df19488-c3f8-45a1-a95f-4d250aaf8d72) |when a new resource is created the user is redirected to a view showing resources with new resource included|
+| As a site user, I would like immediate visual feedback when deleting category |[video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/5deaa9f7-b6e7-4cea-9fb8-124586702dbb
+) |when a category is deleted the user is redirected to a view showing categories with deleted category omitted|
+| As a site user, I would like immediate visual feedback when deleting resource |[video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/94fadbcb-24ee-4061-b20b-1da14e407dcc
+) |when a resource is deleted the user is redirected to a view showing resources with deleted resource omitted|
+| As a site user, I would like immediate visual feedback when updating resource details |[video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/77cdee8e-4a94-4765-8936-a99025e9fcb3
+) |when a resource details are updated the user is redirected to a view showing the updated details|
 ||
 
