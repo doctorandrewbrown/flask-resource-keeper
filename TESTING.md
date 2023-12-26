@@ -117,6 +117,6 @@ Note that tests of custom error pages also satisfy aspects of "User story testin
 | As a site user, I would like immediate visual feedback when deleting category |[video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/5deaa9f7-b6e7-4cea-9fb8-124586702dbb) |when a category is deleted the user is redirected to a view showing categories with deleted category omitted|
 | As a site user, I would like immediate visual feedback when deleting resource |[video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/94fadbcb-24ee-4061-b20b-1da14e407dcc) |when a resource is deleted the user is redirected to a view showing resources with deleted resource omitted|
 | As a site user, I would like immediate visual feedback when updating resource details |[video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/77cdee8e-4a94-4765-8936-a99025e9fcb3)
-|when a resource details are updated the user is redirected to a view showing the updated details|
+| when a resource details are updated the user is redirected to a view showing the updated details|
 ||
 
