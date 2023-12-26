@@ -11,6 +11,7 @@
 * Users are able to create categories and add resources to the categories for future reference.
 * Users are able to edit and delete both categories and resources
 * The app demonstrates basic database CRUD operations in that users can create records, view records, update and delete records.
+* The app provides immediate visual confimation of database CRUD operations. 
 * The app provides a simple attractive interface based on the Bootstrap 5 framework.
 
 ## User Stories
@@ -21,15 +22,23 @@
 | As a site user, I would like to create a new resource category
 | As a site user, I would like to create a new resource within a category
 | As a site user, I would like to view existing categories
-| As a retuning site user, I would like to view stored resources by category with a short note describing the resource.
+| As a site user, I would like to view stored resources by category with a short note describing the resource.
 | As a site user, I would like to be able to access a resource (ie go to that url).
 | As a site user, I would like to be able to edit a resource.
 | As a site user, I would like to be able to edit a category name
 | As a site user, I would like to be able to move a resource to a different category
 | As a site user, I would like to be able to delete a resource
 | As a site user, I would like to be able to delete a category
-| As a site user, I would like to have custom error pages displayed where appropriate
-| As a site user, I would like to be able to easily return to home page via main navigation ie Brand and Home links
+| As a site user, I would like to have custom error pages (http error codes 500 and 404) displayed where appropriate
+| As a site user, I would like to be able to easily return to home page via main navigation (ie Brand and Home links).
+| As a site user, I would like immediate visual feedback when creating a new category
+| As a site user, I would like immediate visual feedback when creating a new resource
+| As a site user, I would like immediate visual feedback when deleting a category
+| As a site user, I would like immediate visual feedback when deleting a resource
+| As a site user, I would like immediate visual feedback when updating a category
+| As a site user, I would like immediate visual feedback when updating a resource
+
+
 ||
 ## Features
 - The features included were intended to test the user stories detailed above.
@@ -180,7 +189,7 @@ if __name__ == "__main__":
 ## Database Schema
 
 ## Bugs
-- Edit button streching 
+Ther are no bugs remaining that I am aware of.
 ## flash
 
 ## Credits
