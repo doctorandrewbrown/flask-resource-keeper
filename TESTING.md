@@ -59,9 +59,9 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 | Tablet (DevTools) | Edit Category |![screenshot](documentation/images/edit-category-tablet.png) | Works as expected |
 | Mobile (DevTools) | Edit Category |![screenshot](documentation/images/edit-category-mobile.png) | Works as expected |
 | Laptop | Edit Category |![screenshot](documentation/images/edit-category-laptop.png) | Works as expected. |
-| Mobile (DevTools) | New Category |![screenshot](documentation/images/new-category-mobile.png) | Works as expected |
-| Tablet (DevTools) | New Category |![screenshot](documentation/images/new-category-tablet.png) | Works as expected |
-| Laptop | New Category |![screenshot](documentation/images/new-category-laptop.png) | Works as expected. |
+| Mobile (DevTools) | Add Category |![screenshot](documentation/images/new-category-mobile.png) | Works as expected |
+| Tablet (DevTools) | Add Category |![screenshot](documentation/images/new-category-tablet.png) | Works as expected |
+| Laptop | Add Category |![screenshot](documentation/images/new-category-laptop.png) | Works as expected. |
 | Mobile (DevTools) | Edit Resource |![screenshot](documentation/images/edit-resource-mobile.png) | Works as expected |
 | Tablet (DevTools) | Edit Resource |![screenshot](documentation/images/edit-resource-tablet.png) | Works as expected |
 | Laptop | Edit Resource |![screenshot](documentation/images/edit-resource-laptop.png) | Works as expected. |
@@ -69,20 +69,18 @@ I've tested my deployed project on multiple devices to check for responsiveness 
 
 ## Lighthouse Audit
 
-I've tested my deployed project using the Lighthouse Audit tool to check for any major issues.
+I have tested my deployed project using the Lighthouse Audit tool to check for any major issues.
 
 | Page | Size | Screenshot | Notes 
 | --- | --- | --- | --- |
 | Home | Mobile | ![screenshot](documentation/images/testing-lighthouse-mobile.png) | Some minor warnings |
 | Home | Desktop | ![screenshot](documentation/images/testing-lighthouse-laptop.png) | Some minor warnings |
-| Add Category | Mobile | ![screenshot](documentation/images/testing-lighthouse-mobile.png) | Some minor warnings |
+| Add Category | Mobile | ![screenshot](documentation/images/lighthouse-add-category-mobile.png) | Some minor warnings |
 | Add Category | Desktop | ![screenshot](documentation/images/lighthouse-add-category-desktop.png) | Some minor warnings |
 | View Resources | Mobile | ![screenshot](documentation/images/lighthouse-view-resource-mobile.png) | Some minor warnings |
 | View Resources | Desktop | ![screenshot](documentation/images/lighthouse-view-resource-desktop.png) | Some minor warnings |
 | Add Resources | Mobile | ![screenshot](documentation/images/lighthouse-add-resource-mobile.png) | Some minor warnings |
 | Add Resources | Desktop | ![screenshot](documentation/images/lighthouse-add-resource-desktop.png) | Some minor warnings |
-| Edit Resources | Mobile | ![screenshot](documentation/images/lighthouse-edit-resource-mobile.png) | Some minor warnings |
-| Edit Resources | Desktop | ![screenshot](documentation/images/lighthouse-edit-resource-desktop.png) | Some minor warnings |
 | Edit Resources | Mobile | ![screenshot](documentation/images/lighthouse-edit-resource-mobile.png) | Some minor warnings |
 | Edit Resources | Desktop | ![screenshot](documentation/images/lighthouse-edit-resource-desktop.png) | Some minor warnings |
 | Edit Category | Mobile | ![screenshot](documentation/images/lighthouse-edit-category-mobile.png) | Some minor warnings |
@@ -98,17 +96,26 @@ Note that tests of custom error pages also satisfy aspects of "User story testin
 | User Action | Expected Result | Pass/Fail | Screenshot |Comments|
 | --- | --- | --- | --- |---| 
 | Click form buttons without filling required form fields | Inform user field is required | Pass | ![screenshot](documentation/images/defence-form-fields.png)|The screenshot shows the "tip" informing user field is required. This protection applies to all required form fields in the app|
-| Delete a resource or category from database | A modal appears prompting for delete confirmation | Pass | ![screenshot](documentation/images/defence-delete-modal.png)|Modal requiring confirmation is triggered on deleting a category or resource from database|
+| Delete a resource or category from database | A modal appears prompting for delete confirmation | Pass | ![screenshot](documentation/images/defence-delete-modal.png)|Modal requiring confirmation is triggered on attempting to delete a category or resource from database|
 | Visit non-existent route | 404 not found page is shown | Pass | ![screenshot](documentation/images/defence-404.png)|404 error page is shown and link back to home page provided|
 | User experiences a server error | 500 server error page is shown| Pass | ![screenshot](documentation/images/defence-500.png)|500 error page is shown and link back to home page provided|
+| User tries enter input which is too long for database| form prevents user from entering input which is too long | Pass | n/a |defence is provided by setting appropriate maxlength attributes in html form input elements|
+## Database Tests
+Manual tests were carried out for `unique` and `nullable=False` constraints as specified in the database schema. Fields required to be both unique and not nullable were
+- Category Name
+- Resource Name
+- Resource Url
 
+and not nullable only
+- Resource Description
 
+In each of the first three cases above, if an attempt was made to store a value already existing in the database a 500 error code html page was displayed to the user, as expected. Defence against null values being comitted to database was achieved using the `required` attribute on relevant html form input elements. If the user tries to submit the form without required fields filled the form does not submit and the browser shows a tooltip prompt to the user as expected.
 ## User Story Testing
 [User story testing ](https://github.com/doctorandrewbrown/flask-resource-keeper/blob/main/README.md/#user-stories) was conducted for all user stories detailed above. This ensured that all features were tested as well as CRUD functionality in that users can create, read, update and delete records as demonstrated below.
 
 | User Story | Demo Video | Comments |
 | --- | --- |----| 
-| As a site user, I would like to create a new resource category | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/17757314-3340-48a9-899a-a10764a2383e) |the video shows creation of a new category|
+| As a site user, I would like to create a new category | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/17757314-3340-48a9-899a-a10764a2383e) |the video shows creation of a new category|
 | As a site user, I would like to create a new resource within a category | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/6231e9cd-6a9a-437f-9e5b-48802a5fdbc2) |the video shows creation of a new resource|
 | As a site user, I would like to view stored resources by category with a short note describing the resource. | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/0da052ed-b949-4751-bbf7-3eb3f409bc34) |the video shows a list of resources in the category and on-hover dropdown with resource description|
 | As a site user, I would like to be able to access a resource (ie go to that url). | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/de9e84ae-a0f7-48a5-8ff1-282db8b4f7bb) |the video demonstrates accessing a resource on stackoverflow|
@@ -119,7 +126,6 @@ Note that tests of custom error pages also satisfy aspects of "User story testin
 | As a site user, I would like to be able to delete a category | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/35dc7818-fbe7-4e1c-9d07-b47a365774d8) |the video demonstrates deleting a category|
 | As a site user, I would like to have custom error pages (http error codes 500 and 404) | ![screenshot](documentation/images/defence-404.png) |custom 404 error page displayed to user|
 | As a site user, I would like to have custom error pages (http error codes 500 and 404) | ![screenshot](documentation/images/defence-500.png) |custom 500 error page displayed to user|
-| As a site user, I would like to be able to delete a category | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/35dc7818-fbe7-4e1c-9d07-b47a365774d8) |the video demonstrates deleting a category|
 | As a site user, I would like to be able to easily return to home page via main navigation ie Brand and Home links | [video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/8b4e403e-de64-41fa-991b-62d9a5301aee) |the video demonstrates return to home page from an inner pages (in the example video, CSS category resources view) back to homepage via main navigation links. Similar tests were satisfactory for all pages in the app|
 | As a site user, I would like immediate visual feedback when creating a new category |[video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/3349a758-b71b-403c-8d90-67d1d1ae5ac0) |when a new category is created the user is redirected to a view showing categories with new category included|
 | As a site user, I would like immediate visual feedback when creating a new resource |[video](https://github.com/doctorandrewbrown/flask-resource-keeper/assets/29900160/2df19488-c3f8-45a1-a95f-4d250aaf8d72) |when a new resource is created the user is redirected to a view showing resources with new resource included|

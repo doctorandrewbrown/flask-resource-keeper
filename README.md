@@ -7,10 +7,10 @@
 * The rationale and design strategy for the app comes from my own experience of finding a solution to keep online resources in a an organized way.
 * The app is intended for use by students or anyone that wants a simple way to keep url resources in a database.
 * Users are able to view saved resources by category and see a short description of the resource.
-* The database stores the url for each resource and users can go straight from the list to the visit the resource.
+* The database stores the url for each resource and users can go straight from the list view to the visit the resource.
 * Users are able to create categories and add resources to the categories for future reference.
 * Users are able to edit and delete both categories and resources
-* The app demonstrates basic database CRUD operations in that users can create records, view records, update and delete records.
+* The app demonstrates basic database CRUD operations where users can create records, view records, update and delete records.
 * The app provides immediate visual confimation of database CRUD operations. 
 * The app provides a simple attractive interface based on the Bootstrap 5 framework.
 
@@ -19,27 +19,27 @@
 
 |User action |
 |--------|
-| As a site user, I would like to create a new resource category
+| As a site user, I would like to create a new category
 | As a site user, I would like to create a new resource within a category
 | As a site user, I would like to view existing categories
 | As a site user, I would like to view stored resources by category with a short note describing the resource.
 | As a site user, I would like to be able to access a resource (ie go to that url).
-| As a site user, I would like to be able to edit a resource.
+| As a site user, I would like to be able to edit a resource details.
 | As a site user, I would like to be able to edit a category name
 | As a site user, I would like to be able to move a resource to a different category
 | As a site user, I would like to be able to delete a resource
 | As a site user, I would like to be able to delete a category
 | As a site user, I would like to have custom error pages (http error codes 500 and 404) displayed where appropriate
-| As a site user, I would like to be able to easily return to home page via main navigation (ie Brand and Home links).
+| As a site user, I would like to be able to easily return to home page via main navigation.
 | As a site user, I would like immediate visual feedback when creating a new category
 | As a site user, I would like immediate visual feedback when creating a new resource
-| As a sitse user, I would like immediate visual feedback when deleting a category
+| As a site user, I would like immediate visual feedback when deleting a category
 | As a site user, I would like immediate visual feedback when deleting a resource
 | As a site user, I would like immediate visual feedback when updating a category
 | As a site user, I would like immediate visual feedback when updating resource details
 ||
 ## Features
-- The features included were intended to test the user stories detailed above.
+- The features included were intended to realize the user stories detailed above.
 ### Home Page View
 - General view shown below shows main navigation (which is included on all pages)and the button to go to the "add category" view. Also shown are cards showing existing resource categories in the database. 
 - ![screenshot](documentation/images/features-homepage.png)
@@ -52,9 +52,9 @@
 - ![screenshot](documentation/images/features-add-category.png)
 ### View Stored Resources
 - This view is accessed via the "view" button in the category cards shown above. The view provides a list of the resources for a given category. A link is provided to go to the resource url. A "details" dropdown on-hover, shows a short description of the resource from the database. An "edit" button takes the user to the view to edit the resource.
-- ![screenshot](documentation/images/features-resources-view.png)
+- ![screenshot](documentation/images/features-view-resources.png)
 ### Edit Category View
-- This view is accessed via the "edit" button on the category card. The view provides an input form for the user to edit the name or delete an existing category. The current category name is shown for reference.
+- This view is accessed via the "edit" button on the category card. The view provides an input form for the user to edit the name or delete an existing category. The current category name is shown in a disabled field for reference.
 - ![screenshot](documentation/images/features-edit-category.png)
 ### Delete Category View
 - If the user choses to delete a category in the view for editing the category, a pop-up modal is fired to confirm the deletion
@@ -171,7 +171,7 @@ You can fork this repository by using the following steps:
 
 The following basic security measures were taken to protect the deployed app.
 - The ```debug``` parameter was set to ```False``` in the heroku (production) version of the ```run.py``` file
-(in the locally deployed version ```debug``` can be set to ```True``` for development purposes).
+(in the local development version ```debug``` can be set to ```True``` for development purposes).
 ```python
 if __name__ == "__main__":
     app.run(
@@ -181,14 +181,19 @@ if __name__ == "__main__":
         debug=False
     )
 ```
-- The `config vars` in Heroku were set to`False` for `debug`
-- ![screenshot](documentation/images/security-configvars.png)
+- For local development purposes, `environment variables` were stored in the `env.py` file. This file includes a value for `SECRET KEY` which must not be exposed in the github repository. For this reason `env.py` is included in the `.gitignore` file so it is not pushed to Github. 
+- Environment variables needed by the app were securely set in the `config vars` section in Heroku dashboard when logged into the account. Here, the value of `SECRET KEY` was set and the value of the `DEBUG` key was set to`False`.
 
 ## Database Schema
 
 ## Bugs
-Ther are no bugs remaining that I am aware of.
-## flash
+### Unwanted stretching of edit button
+- The default behaviour of the button is to stretch to fill the height of containing row as shown
+![screenshot](documentation/images/bugs-button-stretch.png)
+- This unwanted effect was corrected by including the attribute `style="align-self:self-start;"` on the button element
+![screenshot](documentation/images/bugs-button-stretch-corrected.png)
+
+There are no bugs remaining that I am aware of.
 
 ## Credits
 ### Media 
@@ -200,9 +205,9 @@ Ther are no bugs remaining that I am aware of.
 
 | Source | Location | Notes |
 | --- | --- | --- |
-| [W3Schools](https://www.w3schools.com/) | whole site | reference for bootstrap, html, css and javascript |
+| [W3Schools](https://www.w3schools.com/) | whole site | reference for bootstrap, html, css, javascript and python |
 | [Markdown Guide](https://www.markdownguide.org/cheat-sheet/) | README and TESTING | syntax guide for writing Markdown files |
-| [Html Dropdown](https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_text) | edit resource view | Html form dropdown to chose category |
+| [Html Dropdown](https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_text) | edit resource view | Html form dropdown to choose category |
 | [Html max-length attribute](https://www.w3schools.com/tags/att_input_maxlength.asp) | input forms | attribute to limit form input length |
 | [Html form default value](https://linuxhint.com/add-default-value-for-html-textarea/)| input form view | add placeholder to form fields |
 | [Flask error messages](https://www.digitalocean.com/community/tutorials/how-to-handle-errors-in-a-flask-application) | routes.py | Use of flask error messages|
