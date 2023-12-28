@@ -1,10 +1,18 @@
 /* Styles for Resource Keeper app*/
 
-
-/* google font */
 body {
 color: #B80257;
+/* google font */
 font-family: 'Barlow', sans-serif;
+/* push footer to bottom of page */
+display: flex;
+min-height: 100vh;
+flex-direction: column;
+background-color: #FFBBE1;
+}
+
+.main {
+  flex: 1 0 auto;
 }
 
 .nav-header {
@@ -12,9 +20,14 @@ font-family: 'Barlow', sans-serif;
   background-color: #B80257;
 }
 
-.nav-link {
+.navi {
   color: #FFBBE1;
 }
+
+.navi:hover {
+  color: #660250;
+}
+
 footer > div > p {
     color: #FFBBE1;  
 }
@@ -47,30 +60,17 @@ a {
 .card {
   border-style: solid ; 
   border-width: 1px;
+  color: #B80257;
   border-color:#B80257;
   background-color:#FC7FB6;
   box-shadow: 10px 10px 5px grey;
 }
 
-
-/* push footer to bottom of page */
-
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    background-color: #FFBBE1;
-  }
-
-  .main {
-    flex: 1 0 auto;
-  }
-
   select option {
     background-color: #FFBBE1;
   }
 
-  /* edit_resource view dropdown*/
+  /* edit_resource page dropdown styles*/
 
   .dropdown {
     position: relative;
