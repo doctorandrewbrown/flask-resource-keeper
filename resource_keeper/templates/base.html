@@ -20,17 +20,15 @@
 </head>
 
 <body>
+  <!--bootstap snippet for navbar-->
   <nav class="nav-header navbar navbar-expand-lg">
     <div class="container-fluid">
-      <!--bootstap snippet for navbar-->
-      <a class="navbar-brand" href="{{url_for('home')}}" style="color:#FFBBE1;">Resource Keeper</a>
-      <!--button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button-->
-      <div >
+      <a class="navbar-brand navi" href="{{url_for('home')}}" >Resource Keeper</a>
+      <!--hide home link on xs devices-->
+      <div class="d-none d-sm-block">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="{{url_for('home')}}">Home</a>
+            <a class="nav-link navi" href="{{url_for('home')}}"">Home</a>
           </li>
         </ul>
       </div>
