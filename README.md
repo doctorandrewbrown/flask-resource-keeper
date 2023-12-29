@@ -38,6 +38,22 @@
 | As a site user, I would like immediate visual feedback when updating a category
 | As a site user, I would like immediate visual feedback when updating resource details
 ||
+
+## Wireframes
+| Page | Device | Wireframe |
+| --- | --- | --- |
+| Home | Desktop | [wireframe](documentation/wireframes/home-dt.jpg) |
+| Home | Mobile | [wireframe](documentation/wireframes/home-mo.jpg) |
+| Edit category | Desktop | [wireframe](documentation/wireframes/ed-cat-dt.jpg) |
+| Edit category | Mobile | [wireframe](documentation/wireframes/ed-cat-mo.jpg) |
+| Add resource | Desktop | [wireframe](documentation/wireframes/add-res-dt.jpg) |
+| Add resource | Mobile | [wireframe](documentation/wireframes/ed-res-mo.jpg) |
+| View resource | Desktop | [wireframe](documentation/wireframes/view-res-dt.jpg) |
+| View resource | Mobile | [wireframe](documentation/wireframes/view-res-mo.jpg) |
+| Edit resource | Desktop | [wireframe](documentation/wireframes/ed-res-dt.jpg) |
+| Edit resource | Mobile | [wireframe](documentation/wireframes/ed-res-mo.jpg) |
+
+
 ## Features
 - The features included were intended to realize the user stories detailed above.
 ### Home Page View
@@ -166,9 +182,8 @@ You can fork this repository by using the following steps:
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/doctorandrewbrown/flask-resource-keeper.git)
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
-## Wireframes
-## Security
 
+## Security
 The following basic security measures were taken to protect the deployed app.
 - The ```debug``` parameter was set to ```False``` in the heroku (production) version of the ```run.py``` file
 (in the local development version ```debug``` can be set to ```True``` for development purposes).
@@ -183,9 +198,6 @@ if __name__ == "__main__":
 ```
 - For local development purposes, `environment variables` were stored in the `env.py` file. This file includes a value for `SECRET KEY` which must not be exposed in the github repository. For this reason `env.py` is included in the `.gitignore` file so it is not pushed to Github. 
 - Environment variables needed by the app were securely set in the `config vars` section in Heroku dashboard when logged into the account. Here, the value of `SECRET KEY` was set and the value of the `DEBUG` key was set to`False`.
-
-## Database Schema
-
 ## Bugs
 ### Unwanted stretching of edit button
 - The default behaviour of the button is to stretch to fill the height of containing row as shown
