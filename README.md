@@ -1,7 +1,6 @@
 # Flask resource keeper app
 
-
-## [Live site here](https://resource-keeper-9faa6ecfb87f.herokuapp.com/)
+ ![screenshot](documentation/images/features-homepage.png)
 # Overview
 * Resource Keeper is a flask app that allows users to store and retrieve references and resources (as urls) in a SQL relational database.
 * The rationale and design strategy for the app comes from my own experience of finding a solution to keep online resources in a an organized way.
