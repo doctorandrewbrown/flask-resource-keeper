@@ -1,5 +1,9 @@
 # Flask resource keeper app
 ## Code Institute portfolio project
+### Technologies
+- Flask
+- PostgeSQL
+- Bootstrap
  ![screenshot](documentation/images/features-homepage.png)
 # Overview
 * Resource Keeper is a flask app that allows users to store and retrieve references and resources (as urls) in a SQL relational database.
